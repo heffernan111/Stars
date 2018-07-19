@@ -13,46 +13,19 @@
                 <!-- /input-group -->
             </li>
             <li>
-                <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                <a href="#"><i class="fa fa-dashboard fa-fw"></i>Dashboard</a>
             </li>
             <li>
-                <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
-                <ul class="nav nav-second-level">
-                    <li>
-                        <a href="flot.html">Flot Charts</a>
-                    </li>
-                    <li>
-                        <a href="morris.html">Morris.js Charts</a>
-                    </li>
-                </ul>
-                <!-- /.nav-second-level -->
+                <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>Charts</a>
             </li>
             <li>
-                <a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>
+                <a href="#"><i class="fa fa-calendar fa-fw"></i>To do List</a>
             </li>
             <li>
-                <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
+                <a href="#"><i class="fa fa-sticky-note-o fa-fw"></i>New Task</a>
             </li>
             <li>
-                <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
-                <ul class="nav nav-second-level">
-                    <li>
-                        <a href="panels-wells.html">Panels and Wells</a>
-                    </li>
-                </ul>
-                <!-- /.nav-second-level -->
-            </li>
-            <li>
-                <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
-                <ul class="nav nav-second-level">
-                    <li>
-                        <a href="blank.html">Blank Page</a>
-                    </li>
-                    <li>
-                        <a href="login.html">Login Page</a>
-                    </li>
-                </ul>
-                <!-- /.nav-second-level -->
+                <a href="#"><i class="fa fa-users fa-fw"></i>Friends</a>
             </li>
         </ul>
     </div>
