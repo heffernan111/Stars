@@ -19,6 +19,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <script src="/bower_components/morris.js/morris.min.js"></script>
 </head>
 <body>
     <div id="app">

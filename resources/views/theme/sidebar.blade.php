@@ -13,7 +13,7 @@
                 <!-- /input-group -->
             </li>
             <li>
-                <a href="#"><i class="fa fa-dashboard fa-fw"></i>Dashboard</a>
+                <a href="/"><i class="fa fa-dashboard fa-fw"></i>Dashboard</a>
             </li>
             <li>
                 <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>Charts</a>
@@ -22,10 +22,10 @@
                 <a href="#"><i class="fa fa-calendar fa-fw"></i>To do List</a>
             </li>
             <li>
-                <a href="#"><i class="fa fa-sticky-note-o fa-fw"></i>New Task</a>
+                <a href="/tasks"><i class="fa fa-sticky-note-o fa-fw"></i>Tasks</a>
             </li>
             <li>
-                <a href="#"><i class="fa fa-users fa-fw"></i>Friends</a>
+                <a href="/friends"><i class="fa fa-users fa-fw"></i>Friends</a>
             </li>
         </ul>
     </div>

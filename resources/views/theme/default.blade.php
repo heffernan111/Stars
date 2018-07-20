@@ -126,6 +126,11 @@
 
 </body>
 
+@section('script')
+<script type="text/javascript">
+//my code here
+</script>
+@endsection
 
 
 </html>

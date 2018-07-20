@@ -1,0 +1,776 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"qu",
+				"Question"
+			],
+			[
+				"td",
+				"td\tTag"
+			],
+			[
+				"col",
+				"color\tproperty"
+			],
+			[
+				"for",
+				"form-control"
+			],
+			[
+				"pa",
+				"pages"
+			],
+			[
+				"page",
+				"page_info"
+			],
+			[
+				"crea",
+				"create_post"
+			],
+			[
+				"t",
+				"title"
+			],
+			[
+				"form",
+				"form-group"
+			],
+			[
+				"form-",
+				"form-group"
+			],
+			[
+				"glo",
+				"global"
+			],
+			[
+				"upda",
+				"update_query"
+			],
+			[
+				"cat",
+				"cat_id"
+			],
+			[
+				"the",
+				"the_cat_title"
+			],
+			[
+				"edit",
+				"edit"
+			],
+			[
+				"categor",
+				"categories"
+			],
+			[
+				"create",
+				"create_category"
+			],
+			[
+				"submit",
+				"submit"
+			],
+			[
+				"p",
+				"php\t<?php … ?>"
+			],
+			[
+				"mysqlrows",
+				"mysql_num_rows"
+			],
+			[
+				"sear",
+				"search_query"
+			],
+			[
+				"post",
+				"post_image"
+			],
+			[
+				"au",
+				"post_author"
+			],
+			[
+				"mysqlfe",
+				"mysql_fetch_assoc"
+			],
+			[
+				"Move",
+				"MoveWheels"
+			],
+			[
+				"cr",
+				"crypt"
+			],
+			[
+				"v",
+				"values"
+			],
+			[
+				"strto",
+				"strtoupper"
+			],
+			[
+				"po",
+				"pow"
+			],
+			[
+				"fo",
+				"forloop"
+			],
+			[
+				"da",
+				"david"
+			],
+			[
+				"if",
+				"if\tif …"
+			],
+			[
+				"num",
+				"number2"
+			],
+			[
+				"regu",
+				"regularArray"
+			],
+			[
+				"nu",
+				"number"
+			],
+			[
+				"nm",
+				"number2"
+			],
+			[
+				"numbe",
+				"number2"
+			],
+			[
+				"over",
+				"overflow-x\tproperty"
+			],
+			[
+				"PO",
+				"_POST"
+			],
+			[
+				"message",
+				"message"
+			],
+			[
+				"border",
+				"border-bottom\tproperty"
+			],
+			[
+				"mar",
+				"margin-bottom\tproperty"
+			],
+			[
+				"border-r",
+				"border-radius\tproperty"
+			],
+			[
+				"wid",
+				"width\tproperty"
+			],
+			[
+				"margin",
+				"margin\tproperty"
+			],
+			[
+				"string",
+				"string_rev"
+			],
+			[
+				"arra",
+				"array"
+			],
+			[
+				"em",
+				"email"
+			],
+			[
+				"in",
+				"input\tTag"
+			],
+			[
+				"ac",
+				"action\tAttr"
+			],
+			[
+				"arry",
+				"array"
+			],
+			[
+				"str_re",
+				"str_replace"
+			],
+			[
+				"e",
+				"echo\techo \"…\""
+			],
+			[
+				"print",
+				"print_r"
+			],
+			[
+				"array_ke",
+				"array_key_exists"
+			],
+			[
+				"prin",
+				"print_r"
+			],
+			[
+				"int",
+				"intval"
+			],
+			[
+				"time",
+				"timeformmatter"
+			],
+			[
+				"align",
+				"align-items\tproperty"
+			],
+			[
+				"text",
+				"text-align\tproperty"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"days",
+				"days"
+			],
+			[
+				"conv",
+				"convert"
+			],
+			[
+				"j",
+				"json"
+			],
+			[
+				"url",
+				"url_base"
+			],
+			[
+				"json",
+				"json_decode"
+			],
+			[
+				"res",
+				"resultArray"
+			],
+			[
+				"fin",
+				"finalResult"
+			],
+			[
+				"fi",
+				"finalResult"
+			],
+			[
+				"ar",
+				"array\t$… = array (…)"
+			],
+			[
+				"resul",
+				"resultArray"
+			],
+			[
+				"final",
+				"finalInput"
+			],
+			[
+				"arr",
+				"array"
+			],
+			[
+				"ren",
+				"render"
+			],
+			[
+				"con",
+				"container"
+			],
+			[
+				"cla",
+				"classes"
+			],
+			[
+				"Class",
+				"class"
+			],
+			[
+				"updat",
+				"updated_at"
+			],
+			[
+				"cal",
+				"calculate"
+			],
+			[
+				"curre",
+				"currency"
+			],
+			[
+				"fetch_",
+				"msql_fetch_object"
+			],
+			[
+				"fetch_objc",
+				"msql_fetch_object"
+			],
+			[
+				"curr",
+				"currencies"
+			],
+			[
+				"input",
+				"inputINT"
+			],
+			[
+				"connec",
+				"connection_status"
+			],
+			[
+				"usr",
+				"users"
+			],
+			[
+				"tiem",
+				"timestamp"
+			],
+			[
+				"file_",
+				"file_get_contents"
+			],
+			[
+				"connectio",
+				"connection"
+			],
+			[
+				"co",
+				"contents"
+			],
+			[
+				"A",
+				"Add"
+			],
+			[
+				"op",
+				"operator"
+			],
+			[
+				"sub",
+				"submit"
+			],
+			[
+				"di",
+				"div\tTag"
+			],
+			[
+				"bor",
+				"border-radius"
+			],
+			[
+				"bord",
+				"border-color"
+			],
+			[
+				"backg",
+				"background-color"
+			],
+			[
+				"navbar",
+				"navbar-primary"
+			],
+			[
+				"wi",
+				"max-width"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "app/Http/Controllers/FriendsController.php",
+			"settings":
+			{
+				"buffer_size": 472,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/Http/Controllers/Controller.php",
+			"settings":
+			{
+				"buffer_size": 361,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"Package Control: install pa",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 158.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/D/webApps",
+		"/D/webApps/app",
+		"/D/webApps/app/Http",
+		"/D/webApps/app/Http/Controllers"
+	],
+	"file_history":
+	[
+		"/D/webApps/resources/views/theme/sidebar.blade.php",
+		"/D/webApps/routes/web.php",
+		"/D/webApps/app/Http/Controllers/Controller.php",
+		"/D/webApps/resources/views/myUsers.blade.php",
+		"/D/webApps/app/Http/Controllers/Auth/RegisterController.php",
+		"/D/webApps/app/Http/Controllers/Auth/ResetPasswordController.php",
+		"/D/webApps/app/Http/Controllers/Auth/LoginController.php",
+		"/D/webApps/resources/views/theme/header.blade.php",
+		"/D/webApps/resources/views/home.blade.php",
+		"/D/webApps/app/Http/Controllers/HomeController.php",
+		"/D/webApps/resources/views/theme/default.blade.php",
+		"/D/webApps/resources/views/theme/myHome.blade.php",
+		"/D/webApps/vendor/laravel/framework/src/Illuminate/Auth/Authenticatable.php",
+		"/D/webApps/app/Http/Middleware/RedirectIfAuthenticated.php",
+		"/D/webApps/vendor/laravel/framework/src/Illuminate/Auth/Middleware/Authenticate.php",
+		"/D/webApps/resources/views/layouts/app.blade.php",
+		"/D/webApps/.env",
+		"/D/webApps/config/database.php",
+		"/D/webApps/resources/views/welcome.blade.php",
+		"/D/homestead/composer.json",
+		"/D/homestead/Homestead.yaml",
+		"/D/Laravel/Homestead/Homestead.yaml",
+		"/D/webApps/public/index.php",
+		"/D/webApps/resources/templates/layout/master.php",
+		"/D/webApps/resources/templates/admin/index.php",
+		"/D/webApps/public/examples/dashboard.html",
+		"/C/Users/apoca/AppData/Local/Temp/Temp1_now-ui-dashboard-master.zip/now-ui-dashboard-master/README.md",
+		"/D/webApps/app/Models/User.php",
+		"/D/webApps/app/Models/Quiz.php",
+		"/D/webApps/vendor/zefireio/framework/src/Zefire/Database/Database.php",
+		"/D/webApps/routing/Routes.php",
+		"/D/webApps/app/Controllers/Http/admin/QuizController.php",
+		"/D/webApps/app/Controllers/Http/Website/ProfileController.php",
+		"/D/webApps/app/Models/UserQuiz.php",
+		"/D/webApps/app/Models/Question.php",
+		"/D/webApps/resources/templates/website/create_poll.php",
+		"/D/webApps/resources/templates/website/create_quiz.php",
+		"/D/webApps/resources/templates/website/profile.php",
+		"/C/Users/apoca/Desktop/SE-DESPATCH.TXT",
+		"/D/webApps/vendor/zefireio/framework/src/Zefire/Http/Request.php",
+		"/D/webApps/app/Controllers/Http/Website/PageController.php",
+		"/D/webApps/resources/templates/website/page.php",
+		"/D/webApps/resources/templates/website/index.php",
+		"/D/webApps/app/Controllers/Http/admin/PageController.php",
+		"/D/webApps/resources/templates/website/edit_quiz.php",
+		"/D/webApps/vendor/zefireio/framework/src/Zefire/Database/Model.php",
+		"/D/webApps/resources/templates/admin/create_page.php",
+		"/D/webApps/resources/templates/website/quizCreate.php",
+		"/D/webApps/app/Controllers/Http/Website/QuizController.php",
+		"/D/webApps/resources/templates/admin/edit_users.php",
+		"/D/webApps/resources/templates/admin/users.php",
+		"/D/webApps/app/Controllers/Http/admin/UserController.php",
+		"/D/webApps/app/Models/QuizModel.php",
+		"/D/webApps/resources/templates/admin/page_index.php",
+		"/D/webApps/app/Controllers/Http/Sandbox/SandboxController.php",
+		"/D/webApps/vendor/zefireio/framework/src/Zefire/Cache/Cache.php",
+		"/D/webApps/vendor/zefireio/framework/src/Zefire/Database/MysqlAdapter.php",
+		"/D/webApps/vendor/zefireio/framework/src/Zefire/Contracts/Modelisable.php",
+		"/D/webApps/app/Models/Role.php",
+		"/D/webApps/app/Models/Page.php",
+		"/D/webApps/vendor/zefireio/framework/src/Zefire/Controllers/Auth/Authenticate.php",
+		"/D/webApps/app/Models/UserRole.php",
+		"/D/webApps/app/Controllers/Http/Auth/UserRolesCheck.php",
+		"/D/webApps/app/Models/UserRoles.php",
+		"/D/webApps/app/Models/Roles.php",
+		"/D/webApps/vendor/zefireio/framework/src/Zefire/Console/Request.php",
+		"/D/webApps/resources/templates/auth/register.php",
+		"/D/webApps/vendor/zefireio/framework/src/Zefire/Controllers/Auth/Registration.php",
+		"/D/webApps/resources/templates/profile.php",
+		"/D/webApps/public/assets/css/theme.css",
+		"/D/webApps/composer.json",
+		"/C/Users/apoca/AppData/Local/Temp/Temp1_startbootstrap-sb-admin-gh-pages (1).zip/startbootstrap-sb-admin-gh-pages/README.md",
+		"/D/webApps/.gitignore",
+		"/D/webApps/resources/templates/admin/edit_user.php",
+		"/D/webApps/_OLD/vendor/zefireio/framework/src/Zefire/Controllers/Auth/Registration.php",
+		"/D/webApps/resources/templates/admin/edit_page.php",
+		"/D/webApps/_OLD/vendor/zefireio/framework/src/Zefire/Core/Application.php",
+		"/D/webApps/vendor/zefireio/framework/src/Zefire/Validation/Validator.php",
+		"/D/webApps/resources/templates/home/page.php",
+		"/D/webApps/resources/templates/home/admin.php",
+		"/D/webApps/vendor/zefireio/framework/src/Zefire/Routing/Route.php",
+		"/D/webApps/resources/templates/home/index.php",
+		"/D/webApps/app/Controllers/Http/Auth/Authenticate.php",
+		"/D/webApps/vendor/zefireio/framework/src/Zefire/Middlewares/Authorization.php",
+		"/D/webApps/app/Controllers/Http/PageController.php",
+		"/D/webApps/app/Models/Pages.php",
+		"/D/webApps/vendor/zefireio/framework/src/Zefire/Aliases/Auth.php",
+		"/D/webApps/app/Controllers/PageController.php",
+		"/D/webApps/resources/templates/home/pages.php",
+		"/D/webApps/resources/templates/home/about.php",
+		"/D/webApps/app/Controllers/Age.php",
+		"/D/webApps/app/Middlewares/CheckAge.php",
+		"/D/webApps/example.env",
+		"/D/webApps/public/cms/images/phs1.jpg",
+		"/D/webApps/public/cms/admin/includes/view_all_posts.php",
+		"/D/webApps/public/cms/admin/includes/admin_navigation.php",
+		"/D/webApps/public/cms/includes/sidebar.php",
+		"/D/webApps/public/cms/admin/categories.php",
+		"/D/webApps/public/cms/admin/functions.php",
+		"/D/webApps/public/cms/admin/includes/update_categories.php",
+		"/D/webApps/public/cms/admin/includes/admin_header.php",
+		"/D/webApps/public/cms/admin/posts.php",
+		"/D/webApps/public/cms/admin/index.php",
+		"/D/webApps/public/cms/admin/includes/header.php",
+		"/D/webApps/public/cms/admin/includes/navigation.php",
+		"/D/webApps/public/cms/admin/includes/footer.php",
+		"/D/webApps/public/cms/includes/navigation.php",
+		"/D/webApps/public/cms/includes/widgets.php",
+		"/D/webApps/public/cms/includes/db.php",
+		"/D/webApps/public/cms/search.php",
+		"/D/webApps/public/cms/index.php",
+		"/D/webApps/public/cms/includes/footer.php",
+		"/D/webApps/public/cms/includes/header.php",
+		"/D/webApps/public/demo/_practical-app/10.php",
+		"/D/webApps/public/demo/class_car3.php",
+		"/D/webApps/public/demo/_practical-app/functions.php",
+		"/D/webApps/public/demo/_practical-app/9.php",
+		"/D/webApps/public/demo/_practical-app/1.php",
+		"/D/webApps/public/demo/_practical-app/8.php",
+		"/D/webApps/public/demo/_practical-app/7.php",
+		"/D/webApps/public/demo/_practical-app/form_process.php",
+		"/D/webApps/public/demo/_practical-app/6.php",
+		"/D/webApps/public/demo/_practical-app/5.php",
+		"/D/webApps/public/demo/_practical-app/4.php",
+		"/D/webApps/public/demo/_practical-app/3.php",
+		"/D/webApps/public/demo/_practical-app/2.php",
+		"/D/webApps/public/embed.php",
+		"/D/webApps/public/chat/style.css"
+	],
+	"find":
+	{
+		"height": 41.0
+	},
+	"find_in_files":
+	{
+		"height": 105.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "app/Http/Controllers/FriendsController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 472,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								472,
+								472
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/Http/Controllers/Controller.php",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 361,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 40.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "sublime_pr.sublime-project",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 246.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
