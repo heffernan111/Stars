@@ -19,37 +19,42 @@ class TasksController extends Controller
         $this->middleware('auth');
     }
 
-    /**
-     * Show current User Tasks.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    // Show All User Tasks //
     public function index()
     {
         $id = Auth::id();
         $tasks = DB::table('user_tasks')->where('user_id','=',$id)->paginate(15);
-        
+    
         return view('myTasks',['tasks' => $tasks]);
     }
-
-    /**
-     * Edit User Tasks.
-     *
-     * @return \Illuminate\Http\Response
-     */
-
-        public function edit(Request $request)
+    // Go To Create Task Page //
+    public function create()
     {        
-        $inputs = $request;
-        dd($inputs);
-        //return view('editTasks');
+
+        return view('newTasks');
     }
 
-    /**
-     * Delete Task.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    // Form Data to Create Task in user_tasks DB //
+    public function store(Request $request)
+    {        
+        $inputs = $request->except(['_token', 'create_task']);
+
+        $validateData = $request->validate([
+            'task_title' => 'required|string|max:50',
+            'task_desc' => 'required|string|max:255'
+        ]);
+        $inputs['user_id'] = Auth::id();
+        DB::table('user_tasks')->insert($inputs);
+        return redirect()->action('TasksController@index');
+    }
+    // Go to Edit Page //
+    public function edit()
+    {        
+        
+        return view('editTasks');
+    }
+
+    // Delete Task Function //
     public function delete(Request $request)
     {
         $inputs = $request->except('X-CSRF-TOKEN');

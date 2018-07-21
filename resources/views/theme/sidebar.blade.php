@@ -3,9 +3,9 @@
         <ul class="nav" id="side-menu">
             <li class="sidebar-search">
                 <div class="input-group custom-search-form">
-                    <input type="text" class="form-control" placeholder="Search...">
+                    <input type="text" class="form-control" name="search" placeholder="Find Friends">
                     <span class="input-group-btn">
-                    <button class="btn btn-default" type="button">
+                    <button class="btn btn-default-sm" type="submit">
                         <i class="fa fa-search"></i>
                     </button>
                 </span>

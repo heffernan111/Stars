@@ -4,11 +4,11 @@
 <div class="row">
     <div class="col-lg-12">
         <h1 class="page-header">Tasks</h1>
-        <button type="button" class="btn btn-primary">Another</button>
     </div>
     <!-- /.col-lg-12 -->
 </div>
 <!-- /.row -->
+<a href="/tasks/new" class="btn btn-info" role="button">Another</a>
 
 <table class="table table-striped table-bordered table-hover">
     <thead>
@@ -33,6 +33,7 @@
     </tbody>
 </table>
 @endsection
+
 <!-- <meta name="csrf-token" content="{{ csrf_token() }}">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
 

@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"in",
+				"inputs"
+			],
+			[
+				"Re",
+				"Request"
+			],
+			[
+				"data",
+				"data-id"
+			],
+			[
 				"qu",
 				"Question"
 			],
@@ -194,10 +206,6 @@
 			[
 				"em",
 				"email"
-			],
-			[
-				"in",
-				"input\tTag"
 			],
 			[
 				"ac",
@@ -404,20 +412,48 @@
 	"buffers":
 	[
 		{
-			"file": "app/Http/Controllers/FriendsController.php",
+			"file": "routes/web.php",
 			"settings":
 			{
-				"buffer_size": 472,
+				"buffer_size": 781,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/Http/Controllers/TasksController.php",
+			"settings":
+			{
+				"buffer_size": 1398,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "app/Http/Controllers/Controller.php",
+			"file": "app/Http/Controllers/HomeController.php",
 			"settings":
 			{
-				"buffer_size": 361,
+				"buffer_size": 468,
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "resources/views/myTasks.blade.php",
+			"settings":
+			{
+				"buffer_size": 1695,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "resources/views/editTasks.blade.php",
+			"settings":
+			{
+				"buffer_size": 703,
+				"encoding": "UTF-8",
+				"line_ending": "Windows",
+				"name": "@extends('theme.default')"
 			}
 		}
 	],
@@ -461,26 +497,40 @@
 		"/D/webApps",
 		"/D/webApps/app",
 		"/D/webApps/app/Http",
-		"/D/webApps/app/Http/Controllers"
+		"/D/webApps/app/Http/Controllers",
+		"/D/webApps/resources",
+		"/D/webApps/resources/assets",
+		"/D/webApps/resources/assets/js",
+		"/D/webApps/resources/assets/js/components",
+		"/D/webApps/resources/views"
 	],
 	"file_history":
 	[
-		"/D/webApps/resources/views/theme/sidebar.blade.php",
+		"/D/webApps/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php",
+		"/D/webApps/resources/views/myTasks.blade.php",
+		"/D/webApps/resources/assets/js/bootstrap.js",
+		"/D/webApps/resources/views/layouts/app.blade.php",
+		"/D/webApps/resources/views/theme/default.blade.php",
+		"/D/webApps/resources/assets/js/app.js",
 		"/D/webApps/routes/web.php",
-		"/D/webApps/app/Http/Controllers/Controller.php",
+		"/D/webApps/app/Http/Controllers/TasksController.php",
+		"/D/webApps/vendor/laravel/framework/src/Illuminate/Support/Facades/Config.php",
+		"/D/webApps/resources/views/theme/sidebar.blade.php",
+		"/D/webApps/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php",
+		"/D/webApps/resources/views/theme/header.blade.php",
+		"/D/webApps/public/theme/dist/css/sb-admin-2.css",
 		"/D/webApps/resources/views/myUsers.blade.php",
+		"/D/webApps/app/Http/Controllers/FriendsController.php",
+		"/D/webApps/app/Http/Controllers/Controller.php",
 		"/D/webApps/app/Http/Controllers/Auth/RegisterController.php",
 		"/D/webApps/app/Http/Controllers/Auth/ResetPasswordController.php",
 		"/D/webApps/app/Http/Controllers/Auth/LoginController.php",
-		"/D/webApps/resources/views/theme/header.blade.php",
 		"/D/webApps/resources/views/home.blade.php",
 		"/D/webApps/app/Http/Controllers/HomeController.php",
-		"/D/webApps/resources/views/theme/default.blade.php",
 		"/D/webApps/resources/views/theme/myHome.blade.php",
 		"/D/webApps/vendor/laravel/framework/src/Illuminate/Auth/Authenticatable.php",
 		"/D/webApps/app/Http/Middleware/RedirectIfAuthenticated.php",
 		"/D/webApps/vendor/laravel/framework/src/Illuminate/Auth/Middleware/Authenticate.php",
-		"/D/webApps/resources/views/layouts/app.blade.php",
 		"/D/webApps/.env",
 		"/D/webApps/config/database.php",
 		"/D/webApps/resources/views/welcome.blade.php",
@@ -583,16 +633,7 @@
 		"/D/webApps/public/demo/_practical-app/functions.php",
 		"/D/webApps/public/demo/_practical-app/9.php",
 		"/D/webApps/public/demo/_practical-app/1.php",
-		"/D/webApps/public/demo/_practical-app/8.php",
-		"/D/webApps/public/demo/_practical-app/7.php",
-		"/D/webApps/public/demo/_practical-app/form_process.php",
-		"/D/webApps/public/demo/_practical-app/6.php",
-		"/D/webApps/public/demo/_practical-app/5.php",
-		"/D/webApps/public/demo/_practical-app/4.php",
-		"/D/webApps/public/demo/_practical-app/3.php",
-		"/D/webApps/public/demo/_practical-app/2.php",
-		"/D/webApps/public/embed.php",
-		"/D/webApps/public/chat/style.css"
+		"/D/webApps/public/demo/_practical-app/8.php"
 	],
 	"find":
 	{
@@ -610,6 +651,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"id"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -627,24 +669,52 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/Http/Controllers/FriendsController.php",
+					"file": "routes/web.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 472,
+						"buffer_size": 781,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								472,
-								472
+								781,
+								781
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/Http/Controllers/TasksController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1398,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								996,
+								996
 							]
 						],
 						"settings":
@@ -654,19 +724,19 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 228.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "app/Http/Controllers/Controller.php",
+					"buffer": 2,
+					"file": "app/Http/Controllers/HomeController.php",
 					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 361,
+						"buffer_size": 468,
 						"regions":
 						{
 						},
@@ -679,7 +749,69 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax"
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "resources/views/myTasks.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1695,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								434,
+								434
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "resources/views/editTasks.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 703,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								656,
+								656
+							]
+						],
+						"settings":
+						{
+							"auto_name": "@extends('theme.default')",
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -739,6 +871,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"sb admin 2",
+				"public\\theme\\dist\\css\\sb-admin-2.css"
+			]
 		],
 		"width": 0.0
 	},
@@ -768,7 +904,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 246.0,
+	"side_bar_width": 271.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
