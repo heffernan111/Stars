@@ -106,10 +106,10 @@
                 </div>
 
                 <div class="links">
-                    <a href="">Guides</a>
-                    <a href="">Shop</a>
-                    <a href="">Gallery</a>
-                    <a href="">Maps</a>
+                    <a href="\guides">Guides</a>
+                    <a href="\shop">Shop</a>
+                    <a href="\gallery">Gallery</a>
+                    <a href="\maps">Maps</a>
                     <a href="\chat">Chat</a>
                 </div>
             </div>

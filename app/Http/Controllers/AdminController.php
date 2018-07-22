@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+use App\Roles;
+
 
 class AdminController extends Controller
 {
@@ -24,5 +28,23 @@ class AdminController extends Controller
     public function index()
     {
         return view('admin');
+    }
+
+     public function users()
+    {
+        
+        $roles = \App\User::all();
+        //dd($roles);
+        return view('users', ['users'=>$roles]);
+    }
+
+     public function usersEdit()
+    {
+        return view('editUser');
+    }
+
+     public function usersSave()
+    {
+        return view('users');
     }
 }

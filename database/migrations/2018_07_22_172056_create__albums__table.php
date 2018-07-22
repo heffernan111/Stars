@@ -19,7 +19,7 @@ class CreateAlbumsTable extends Migration
             $table->text('description');
             $table->string('cover_image');
             $table->timestamps();
-        });
+            });
     }
 
     /**
@@ -29,6 +29,6 @@ class CreateAlbumsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('albums');
+        Schema::dropIfExists('albums');
     }
 }
