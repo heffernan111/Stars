@@ -5,16 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
-
-        <?php
-          if(DB::connection()->getDatabaseName())
-   {
-     echo "conncted sucessfully to database ".DB::connection()->getDatabaseName();
-   }
-         ?>
-
-
+        <title>Astro Sites</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -22,7 +13,7 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #fff;
+                background-color: #000;
                 color: #636b6f;
                 font-family: 'Raleway', sans-serif;
                 font-weight: 100;
@@ -71,6 +62,15 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+            #container {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                left: 0px;
+                top: 0px;
+                z-index: -1;
+            }
+        </style>
         </style>
     </head>
     <body>
@@ -78,8 +78,22 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        {{ Auth::user()->name }} <span class="caret"></span>
+                    </a>
+                    @if(Auth::user()->role_id == 1)
+                        <a href="{!! url('/admin'); !!}">Admin</a>
+                    @endif
+                    <a class="dropdown-item" href="{{ route('logout') }}"
+                       onclick="event.preventDefault();
+                                     document.getElementById('logout-form').submit();">
+                        {{ __('Logout') }}
+                    </a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+                        @else
                         <a href="{{ route('login') }}">Login</a>
                         <a href="{{ route('register') }}">Register</a>
                     @endauth
@@ -88,17 +102,27 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Astro Gaze
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="">Guides</a>
+                    <a href="">Shop</a>
+                    <a href="">Gallery</a>
+                    <a href="">Maps</a>
+                    <a href="\chat">Chat</a>
                 </div>
             </div>
         </div>
+    <!-- The main starfield container, fills the entire screen. -->
+    <div id="container"></div>
+    <script src="starfield.js"></script>
+    <script>
+      //  Get the container and turn it into a starfield.
+        var container = document.getElementById('container');
+        var starfield = new Starfield();
+        starfield.initialise(container);
+        starfield.start();
+    </script>
     </body>
 </html>

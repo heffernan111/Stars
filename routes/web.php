@@ -14,7 +14,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
+// Chat Page
+Route::get('chat', 'ChatController@index')->middleware('auth');
+Route::post('chat/store', 'ChatController@new')->middleware('auth');
+// Admin Routes
+Route::get('admin', 'AdminController@index')->middleware('auth');
+
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
