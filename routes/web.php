@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {return view('welcome');});
+Route::get('/', 'HomeController@index');
+
 // Chat
 Route::get('chat', 'ChatController@index')->middleware('auth');
 Route::post('chat/store', 'ChatController@new')->middleware('auth');

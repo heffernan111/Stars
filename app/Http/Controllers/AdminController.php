@@ -18,6 +18,7 @@ class AdminController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        $this->middleware('role:Admin');
     }
 
     /**
@@ -33,7 +34,7 @@ class AdminController extends Controller
      public function users()
     {
         
-        $roles = \App\User::all();
+        $roles = \App\Role::find(1)->users;
         //dd($roles);
         return view('users', ['users'=>$roles]);
     }

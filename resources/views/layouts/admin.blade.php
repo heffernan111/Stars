@@ -35,9 +35,9 @@
 
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
-                        <a class="navbar-brand" href="admin">Tasks</a>
-                        <a class="navbar-brand" href="admin/users">Users</a>
-                        <a class="navbar-brand" href="admin/gallery">Gallery</a>
+                        <a class="navbar-brand" href="/admin">Tasks</a>
+                        <a class="navbar-brand" href="/admin/users">Users</a>
+                        <a class="navbar-brand" href="/admin/gallery">Gallery</a>
 
                     </ul>
                     <!-- Right Side Of Navbar -->

@@ -81,7 +81,7 @@
                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         {{ Auth::user()->name }} <span class="caret"></span>
                     </a>
-                    @if(Auth::user()->role_id == 1)
+                    @if($roles->id == 1)
                         <a href="{!! url('/admin'); !!}">Admin</a>
                     @endif
                     <a class="dropdown-item" href="{{ route('logout') }}"
