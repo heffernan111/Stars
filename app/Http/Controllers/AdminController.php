@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
-use App\Roles;
+use App\Role;
 
 
 class AdminController extends Controller
@@ -19,6 +19,7 @@ class AdminController extends Controller
     {
         $this->middleware('auth');
         $this->middleware('role:Admin');
+
     }
 
     /**
@@ -33,18 +34,20 @@ class AdminController extends Controller
 
      public function users()
     {
-        
-        $roles = \App\Role::find(1)->users;
+
+        $roles = \App\User::with('roles')->orderBy('id')->get();
         //dd($roles);
         return view('users', ['users'=>$roles]);
     }
 
-     public function usersEdit()
+     public function edit($id)
     {
-        return view('editUser');
+        $users = \App\User::with('roles')->find($id);
+        //dd($users);
+        return view('user_edit',['users'=>$users]);
     }
 
-     public function usersSave()
+     public function save()
     {
         return view('users');
     }

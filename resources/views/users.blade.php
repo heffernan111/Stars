@@ -20,20 +20,20 @@
                                 <th>Delete</th>
                             </tr>
                         </thead>    
-                        @foreach($users as $users)
+                        @foreach($users as $user)
                         <tr>
-                            <td>{{ $users->name }}</td>
-                            <td>{{ $users->role_id }}</td>
-                            <td>{{ $users->email }}</td>
-							<td><a href="/user/edit/{{ $users->id }}" class="btn btn-info" role="button">Edit</a></td>
-							<td><a href="/user/ban/{{ $users->id }}" class="btn btn-danger" role="button">Ban</a></td>
-							<td><a href="/user/delete/{{ $users->id }}" class="btn btn-warning" role="button">Delete</a></td>
+                            <td>{{ $user->name }}</td>
+                            <td>{{ $user['roles'][0]['name'] }}</td>
+                            <td>{{ $user->email }}</td>
+							<td><a href="/admin/users/edit/{{ $user->id }}" class="btn btn-info" role="button">Edit</a></td>
+							<td><a href="/admin/users/ban/{{ $user->id }}" class="btn btn-danger" role="button">Ban</a></td>
+							<td><a href="/admin/users/delete/{{ $user->id }}" class="btn btn-warning" role="button">Delete</a></td>
                         </tr>
                         @endforeach
                         </tbody>
                         </table>                
                     </div>
-                    
+                     
                     </div>
             </div>
         </div>
