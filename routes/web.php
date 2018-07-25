@@ -21,7 +21,7 @@ Route::post('chat/store', 'ChatController@new')->middleware('auth');
 Route::get('admin', 'AdminController@index')->middleware('auth');
 Route::get('admin/users', 'AdminController@users')->middleware('auth');
 Route::get('admin/users/edit/{id}', 'AdminController@edit')->middleware('auth');
-Route::get('admin/users/edit/store', 'AdminController@save')->middleware('auth');
+Route::post('admin/users/update', 'AdminController@save')->middleware('auth');
 Route::get('admin/users/ban', 'AdminController@usersBan')->middleware('auth');
 Route::get('admin/gallery', 'AdminController@gallery')->middleware('auth');
 

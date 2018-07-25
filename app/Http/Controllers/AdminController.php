@@ -47,8 +47,11 @@ class AdminController extends Controller
         return view('user_edit',['users'=>$users]);
     }
 
-     public function save()
+     public function save(Request $request)
     {
+        $inputs = $request;
+        dd($inputs);
         return view('users');
     }
 }
+//
