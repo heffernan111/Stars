@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\Role;
+use App\User;
 
 
 class AdminController extends Controller
@@ -36,22 +37,30 @@ class AdminController extends Controller
     {
 
         $roles = \App\User::with('roles')->orderBy('id')->get();
-        //dd($roles);
         return view('users', ['users'=>$roles]);
     }
 
      public function edit($id)
     {
         $users = \App\User::with('roles')->find($id);
-        //dd($users);
-        return view('user_edit',['users'=>$users]);
+        $roles = \App\role::all();
+        //dd($roles);
+        return view('user_edit',['users'=>$users, 'roles'=>$roles]);
     }
 
      public function save(Request $request)
     {
-        $inputs = $request;
-        dd($inputs);
-        return view('users');
+
+        $user = $request->except(['_token','save_user']);
+        $id_int = (int)$user['id'];
+        $user_id = \App\User::findOrFail($id_int);
+        $user = [
+            'name'=>$user['name'],
+            'email'=>$user['email'],
+        ];
+        $user_id->update($user);
+        $role_int = (int)$request['role'];    
+        $user_id->roles()->sync($role_int);
+        return redirect()->action('AdminController@users');
     }
 }
-//

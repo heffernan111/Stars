@@ -25,9 +25,7 @@ class HomeController extends Controller
     public function index()
     {
         $id =  Auth::id();
-        //$roles = \App\User::with('roles')->orderBy('id')->get();
         $roles = \App\User::with('roles')->find($id);
-        //dd($roles);
         return view('welcome', ['roles'=>$roles]);
        
     }
