@@ -22,7 +22,9 @@ Route::get('admin', 'AdminController@index')->middleware('auth');
 Route::get('admin/users', 'AdminController@users')->middleware('auth');
 Route::get('admin/users/edit/{id}', 'AdminController@edit')->middleware('auth');
 Route::post('admin/users/update', 'AdminController@save')->middleware('auth');
-Route::get('admin/users/ban', 'AdminController@usersBan')->middleware('auth');
+Route::get('admin/users/delete/{id}', 'AdminController@delete')->middleware('auth');
+Route::get('admin/users/ban/{id}', 'AdminController@ban')->middleware('auth');
+Route::get('admin/users/unban/{id}', 'AdminController@unban')->middleware('auth');
 Route::get('admin/gallery', 'AdminController@gallery')->middleware('auth');
 
 // Gallery 

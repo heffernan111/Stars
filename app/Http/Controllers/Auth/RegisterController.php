@@ -68,7 +68,7 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
-
+       
         $user = \App\User::find($create->id);
         $role = \App\Role::where('name','=','user')->first();
         $user->roles()->attach($role->id);

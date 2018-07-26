@@ -44,7 +44,6 @@ class AdminController extends Controller
     {
         $users = \App\User::with('roles')->find($id);
         $roles = \App\role::all();
-        //dd($roles);
         return view('user_edit',['users'=>$users, 'roles'=>$roles]);
     }
 
@@ -61,6 +60,40 @@ class AdminController extends Controller
         $user_id->update($user);
         $role_int = (int)$request['role'];    
         $user_id->roles()->sync($role_int);
-        return redirect()->action('AdminController@users');
+        return redirect()->action('AdminController@users')->with('message', 'User Saved');
+    }
+
+    public function delete($id)
+    {
+        $id_int = (int)$id;
+        $user_id = \App\User::findOrFail($id_int);
+        $user_id->roles()->detach();
+        $user_id->delete();
+        return redirect()->action('AdminController@users')->with('message', 'Deleted');
+       
+    }
+
+    public function ban($id)
+    {
+        $id_int = (int)$id;
+        $user_id = \App\User::findOrFail($id_int);
+        $user = [
+            'banned'=> 1,
+        ];
+        $user_id->update($user);
+        return redirect()->action('AdminController@users')->with('message', 'Banned');
+       
+    }
+
+    public function unban($id)
+    {
+        $id_int = (int)$id;
+        $user_id = \App\User::findOrFail($id_int);
+        $user = [
+            'banned'=> null,
+        ];
+        $user_id->update($user);
+        return redirect()->action('AdminController@users')->with('message', 'Banned');
+       
     }
 }
