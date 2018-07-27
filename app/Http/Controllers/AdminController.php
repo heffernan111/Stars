@@ -35,9 +35,8 @@ class AdminController extends Controller
 
      public function users()
     {
-
-        $roles = \App\User::with('roles')->orderBy('id')->get();
-        return view('users', ['users'=>$roles]);
+        $users = \App\User::with('roles')->orderBy('id')->get();
+        return view('users', ['users' => $users]);
     }
 
      public function edit($id)
@@ -49,17 +48,15 @@ class AdminController extends Controller
 
      public function save(Request $request)
     {
-
-        $user = $request->except(['_token','save_user']);
-        $id_int = (int)$user['id'];
-        $user_id = \App\User::findOrFail($id_int);
-        $user = [
-            'name'=>$user['name'],
-            'email'=>$user['email'],
-        ];
-        $user_id->update($user);
-        $role_int = (int)$request['role'];    
-        $user_id->roles()->sync($role_int);
+        $input = $request->except(['_token','save_user']);
+        $user = \App\User::find($input['id']);
+        $role_id = $input['role'];
+        unset($input['role']);
+        foreach ($input as $key => $value) {
+            $user->$key = $value;
+        }
+        $user->save();
+        $user->roles()->sync($role_id);
         return redirect()->action('AdminController@users')->with('message', 'User Saved');
     }
 

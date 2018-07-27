@@ -15,7 +15,7 @@
 Route::get('/', 'HomeController@index');
 
 // Chat
-Route::get('chat', 'ChatController@index')->middleware('auth');
+Route::get('chat', 'ChatController@index')->middleware('auth','banned');
 Route::post('chat/store', 'ChatController@new')->middleware('auth');
 // Admin
 Route::get('admin', 'AdminController@index')->middleware('auth');
