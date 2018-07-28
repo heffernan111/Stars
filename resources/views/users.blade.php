@@ -4,6 +4,9 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
+             @if (Session::has('message'))
+            <div class="alert alert-success">{{ Session::get('message') }}</div>
+            @endif
             <div class="card">
                 <div class="card-header">User List</div>
                     <div class="card-body">
@@ -39,10 +42,7 @@
                     </div>
                 </div>
             </div>
-        </div>
-            @if (Session::has('message'))
-            <div class="alert alert-success">{{ Session::get('message') }}</div>
-            @endif
+        </div>         
     </div>
 </div>
 @endsection

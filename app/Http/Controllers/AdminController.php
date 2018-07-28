@@ -57,40 +57,42 @@ class AdminController extends Controller
         }
         $user->save();
         $user->roles()->sync($role_id);
-        return redirect()->action('AdminController@users')->with('message', 'User Saved');
+        return redirect()->action('AdminController@users')->with('message', "$user->name"." ".'Updated');
     }
 
     public function delete($id)
     {
         $id_int = (int)$id;
-        $user_id = \App\User::findOrFail($id_int);
+        $user_id = \App\User::find($id_int);
         $user_id->roles()->detach();
         $user_id->delete();
-        return redirect()->action('AdminController@users')->with('message', 'Deleted');
+        return redirect()->action('AdminController@users')->with('message', "$user_id->name"." ".'Completely Deleted');
        
     }
 
     public function ban($id)
     {
         $id_int = (int)$id;
-        $user_id = \App\User::findOrFail($id_int);
+        $user_id = \App\User::find($id_int);
         $user = [
             'banned'=> 1,
         ];
+        $role = "2";
+        $user_id->roles()->sync($role);
         $user_id->update($user);
-        return redirect()->action('AdminController@users')->with('message', 'Banned');
+        return redirect()->action('AdminController@users')->with('message', "$user_id->name"." ".'Access Removed');
        
     }
 
     public function unban($id)
     {
         $id_int = (int)$id;
-        $user_id = \App\User::findOrFail($id_int);
+        $user_id = \App\User::find($id_int);
         $user = [
             'banned'=> null,
         ];
         $user_id->update($user);
-        return redirect()->action('AdminController@users')->with('message', 'Banned');
+        return redirect()->action('AdminController@users')->with('message',"$user_id->name"." ".'Access Restored');
        
     }
 }

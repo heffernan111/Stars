@@ -12,7 +12,7 @@ class CheckBanned
             // check if user is banned
             // if user banned
             if (\Auth::user()->banned == 1) {
-                abort(403, 'This action is unauthorized.');    
+                abort(500, 'This action is unauthorized.');    
             } else {
                 return $next($request);
             }
