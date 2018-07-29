@@ -63,6 +63,11 @@ class User extends Authenticatable
       }
       return false;
     }
+
+    public function images()
+    {
+        return $this->hasMany('App\Image');
+    }
  
 
 

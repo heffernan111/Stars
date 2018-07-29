@@ -28,7 +28,9 @@ Route::get('admin/users/unban/{id}', 'AdminController@unban')->middleware('auth'
 Route::get('admin/gallery', 'AdminController@gallery')->middleware('auth');
 
 // Gallery 
-Route::get('gallery', 'GalleryController@index');
+Route::get('gallery', 'ImageController@index');
+Route::post('gallery/upload', 'ImageController@upload');
+
 
 
 Auth::routes();

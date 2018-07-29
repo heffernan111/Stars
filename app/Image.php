@@ -1,9 +1,15 @@
 <?php
-class Image extends Eloquent {
-  
-  protected $table = 'images';
-  
-  protected $fillable = array('album_id','description','image');
-  
-}
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Image extends Model
+{
+    protected $table = 'images';
+
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
 }

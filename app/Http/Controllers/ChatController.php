@@ -30,6 +30,8 @@ class ChatController extends Controller
 
         return view('chat',['chat'=>$chat]);
     }
+
+    
        public function new(Request $request)
     {
 
