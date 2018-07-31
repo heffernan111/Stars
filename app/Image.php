@@ -6,6 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Image extends Model
 {
+
+	 protected $fillable = [
+        'user_id','image_name','image_description','file_name', 'url',
+    ];
+
+
     protected $table = 'images';
 
     public function user()

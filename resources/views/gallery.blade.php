@@ -3,6 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
+    	@auth
 		<form action="/gallery/upload" method="post" enctype="multipart/form-data">
 			@csrf
 			<input name="id" type="hidden" value="{{ $id }}">
@@ -22,14 +23,15 @@
 					<input class="btn btn-primary" type="submit" name="save_user" value="Save">
 				</div>
 		</form>
+		@endauth
 	        <div class="col-md-12">     	
 	            <div class="card">
 	                <div class="card-header">Gallery</div>
 	                    <div class="card-body">
 	                		@foreach($images as $image)
 								<div class="card">
-								  <div class="card-header">{{ $image->description }}</div>
-								  <div class="card-body">{{ $image->image }}</div> 
+								  <div class="card-header">{{ $image->image_name }}</div>
+								  <div class="card-body">{{ $image->image_description }}</div> 
 								  <div class="card-footer">{{ $image->user['name']." ". $image->created_at }}</div>
 								</div>
 								<br>							
