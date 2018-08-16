@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+    @if (Session::has('message'))
+    <div class="alert alert-success">{{ Session::get('message') }}</div>
+    @endif
 <div class="container">
     <div class="row justify-content-center">
     	@auth
@@ -31,7 +34,8 @@
 	                		@foreach($images as $image)
 								<div class="card">
 								  <div class="card-header">{{ $image->image_name }}</div>
-								  <div class="card-body">{{ $image->image_description }}</div> 
+								  <div class="card-body">{{ $image->image_description }}</div>
+								  <img src="<?php echo asset("/$image->path")?>"></img>
 								  <div class="card-footer">{{ $image->user['name']." ". $image->created_at }}</div>
 								</div>
 								<br>							

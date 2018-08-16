@@ -26,13 +26,14 @@ class ImageController extends Controller
         'id' => 'required',
         'image_name' => 'required|max:255',
         'image_description' => 'required|max:255',
-        'file' => 'required|mimes:image'
+        'filename.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
    		]);
 
 			if ($request->hasFile('file')) {
 				$file_name = $request->file->getClientOriginalName();
-				$path = $request->file->storeAs('public/images', $file_name);
+				$path = $request->file->storeAs('storage/images', $file_name);
 				$file_description = $request->description;
+
 				}
 					$request_image = [
 		            'user_id'=> $request['id'],
@@ -40,11 +41,10 @@ class ImageController extends Controller
 		            'image_description'=> $request['image_description'],
 		            'file_name'=> $file_name,
 		            'url'=> 'url',
+                    'path' => $path,
 		        	];
         	
-
 		\App\Image::create($request_image);			
-				
         return redirect()->action('ImageController@index')->with('message', 'Image Uploaded. Awaiting Approval.');
 
     }
