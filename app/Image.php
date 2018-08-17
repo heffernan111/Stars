@@ -8,7 +8,7 @@ class Image extends Model
 {
 
 	 protected $fillable = [
-        'user_id','image_name','image_description','file_name', 'url','path',
+        'user_id','image_name','image_description','file_name','path',
     ];
 
 

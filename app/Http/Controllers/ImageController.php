@@ -31,7 +31,9 @@ class ImageController extends Controller
 
 			if ($request->hasFile('file')) {
 				$file_name = $request->file->getClientOriginalName();
-				$path = $request->file->storeAs('storage/images', $file_name);
+                //$request->file('photo')->move(public_path("/uploads"), $newfilename);
+                // Storage::disk('uploads')->put($file_name,'file');
+				$path = $request->file->storeAs('public', $file_name);
 				$file_description = $request->description;
 
 				}
@@ -40,7 +42,6 @@ class ImageController extends Controller
 		            'image_name'=> $request['image_name'],
 		            'image_description'=> $request['image_description'],
 		            'file_name'=> $file_name,
-		            'url'=> 'url',
                     'path' => $path,
 		        	];
         	

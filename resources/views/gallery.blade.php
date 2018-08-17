@@ -35,7 +35,7 @@
 								<div class="card">
 								  <div class="card-header">{{ $image->image_name }}</div>
 								  <div class="card-body">{{ $image->image_description }}</div>
-								  <img src="<?php echo asset("/$image->path")?>"></img>
+								  <img src="<?php echo asset("storage/$image->file_name")?>" height="200", width="200"></img>
 								  <div class="card-footer">{{ $image->user['name']." ". $image->created_at }}</div>
 								</div>
 								<br>							
