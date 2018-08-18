@@ -18,7 +18,7 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name', 'email', 'password', 'banned',
-    ];
+    ]; 
 
     /**
      * The attributes that should be hidden for arrays.
@@ -29,11 +29,14 @@ class User extends Authenticatable
         'password', 'remember_token', 'banned',
     ];
 
+  
+
+    // roles
+
     public function roles()
     {
         return $this->belongsToMany('App\Role','role_user', 'user_id', 'role_id');
     }
-
     public function checkRoles($roles)
     {
         if($this->hasAnyRole($roles)){

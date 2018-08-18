@@ -11,12 +11,12 @@
 |
 */
 
-//Route::get('/', function () {return view('welcome');});
 Route::get('/', 'HomeController@index');
 
 // Chat
 Route::get('chat', 'ChatController@index')->middleware('auth');
 Route::post('chat/store', 'ChatController@new')->middleware('auth');
+
 // Admin
 Route::get('admin', 'AdminController@index')->middleware('auth');
 Route::get('admin/users', 'AdminController@users')->middleware('auth');
@@ -31,11 +31,10 @@ Route::get('admin/gallery', 'AdminController@gallery')->middleware('auth');
 Route::get('gallery', 'ImageController@index');
 Route::post('gallery/upload', 'ImageController@upload');
 
-
-
-//test
-Route::get('form','FormController@create');
-Route::post('form','FormController@store');
+//User 
+Route::get('/profile/{id}', 'UserController@Index')->middleware('auth');
+Route::get('/profile/update', 'UserController@Update')->middleware('auth');
+Route::get('/profile/gallery', 'UserController@Gallery')->middleware('auth');
 
 Auth::routes();
 
