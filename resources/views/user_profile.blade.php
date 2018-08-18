@@ -5,7 +5,8 @@
 	<div class="row justify-content-center">
 	<!-- Create Pages -->
 		<div class="col-md-8">
-			<h1>Edit User</h1>
+			<h1>{{ $user->name }}</h1>
+            @if(Auth::id() === $user->id)
 			<form action="/profile/update" method="post" enctype="multipart/form-data">
 				@csrf
 				<input name="id" type="hidden" value="{{ $user->id }}">
@@ -22,6 +23,7 @@
 					<input class="btn btn-primary" type="submit" name="save_user" value="Save">
 				</div>
 			</form>
+            @endif
 		</div>
 		<div class="col-md-8">
         <div class="card-body">
@@ -29,11 +31,13 @@
                 <thead>
                     <tbody>
                         <tr>
-                        	<th>Thumbnail</th>
+                            <th>Thumbnail</th>
                             <th>Name</th>
                             <th>Description</th>
+                            @if(Auth::id() === $user->id)
                             <th>Edit</th>
                             <th>Delete</th>
+                            @endif                           
                         </tr>
                			</thead>    
                         @foreach($images as $image)
@@ -41,8 +45,10 @@
                         	<td><img src="<?php echo asset("storage/$image->file_name")?>" height="100", width="100"></img></td>
                             <td>{{ $image->image_name }}</td>
                             <td>{{ $image->image_description }}</td>
+                            @if(Auth::id() === $user->id)
                             <td><a href="/profile/image/edit/{{ $image->id }}" class="btn btn-info" role="button">Edit</a></td>
                             <td><a href="/profile/image/delete/{{ $image->id }}" class="btn btn-danger" role="button">Delete</a></td>
+                            @endif
                         </tr>
                         @endforeach
                     </tbody>

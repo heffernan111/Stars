@@ -32,9 +32,9 @@ Route::get('gallery', 'ImageController@index');
 Route::post('gallery/upload', 'ImageController@upload');
 
 //User 
-Route::get('/profile/{id}', 'UserController@Index')->middleware('auth');
-Route::get('/profile/update', 'UserController@Update')->middleware('auth');
-Route::get('/profile/gallery', 'UserController@Gallery')->middleware('auth');
+Route::get('/profile/{id}', 'UserController@index')->middleware('auth','user');
+Route::post('/profile/update', 'UserController@update')->middleware('auth');
+Route::get('/profile/gallery', 'UserController@gallery')->middleware('auth');
 
 Auth::routes();
 
