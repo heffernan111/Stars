@@ -51,7 +51,7 @@
                                     <div class="card-body">{{ $image->description }}</div>
                                     <img src="<?php echo asset("storage/$image->file_name")?>" height="200", width="200"></img>
                                     <div class="card-footer">
-                                        
+                                        {{ $image[0][0]['id'] }}
                                     </div>
                                 </div>
                                 <br>                            

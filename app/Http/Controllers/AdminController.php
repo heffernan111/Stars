@@ -36,6 +36,7 @@ class AdminController extends Controller
      public function users()
     {
         $users = \App\User::with('roles')->orderBy('id')->get();
+        dd($users);
         return view('users', ['users' => $users]);
     }
 

@@ -16,8 +16,9 @@ class ImageController extends Controller
     public function index()
     {
 
-    	$images = \App\Image::with(['user','comments'])->get();
+    	$images = \App\Image::with(['comments','user'])->get();
     	$id =  Auth::id();
+        //dd($images);
     	return view('gallery', ['images' => $images, 'id' => $id]);
     
     }
