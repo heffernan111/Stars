@@ -16,7 +16,7 @@
                                 <th>Time</th>
                             </tr>
                         </thead>    
-                        @foreach($chat as $chat)
+                        @foreach($chats as $chat)
                         <tr>
                             <td>{{ $chat->user_id }}</td>
                             <td>{{ $chat->text }}</td>
@@ -25,7 +25,8 @@
                         </tr>
                         @endforeach
                         </tbody>
-                        </table>                
+                        </table>   
+                        {{ $chats->links() }}             
                         <form action="/chat/store" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">

@@ -36,6 +36,8 @@ Route::get('/profile/{id}', 'UserController@index')->middleware('auth','user');
 Route::post('/profile/update', 'UserController@update')->middleware('auth');
 Route::get('/profile/gallery', 'UserController@gallery')->middleware('auth');
 Route::get('/profile/image/delete/{id}', 'UserController@delete')->middleware('auth','user');
+Route::post('/profile/upload', 'UserController@upload')->middleware('auth','user');;
+
 
 Auth::routes();
 

@@ -26,9 +26,9 @@ class ChatController extends Controller
     public function index()
     {
 
-        $chat = DB::table('user_chat')->paginate(15);
+        $chats = DB::table('user_chat')->paginate(15);
 
-        return view('chat',['chat'=>$chat]);
+        return view('chat',['chats'=>$chats]);
     }
 
     

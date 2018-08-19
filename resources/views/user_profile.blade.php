@@ -30,7 +30,7 @@
                     <!-- Modal content -->
                     <div class="modal-content">
                         <span class="close">&times;</span>
-                        <form action="/gallery/upload" method="post" enctype="multipart/form-data">
+                        <form action="/profile/upload" method="post" enctype="multipart/form-data">
                         @csrf
                             <input name="id" type="hidden" value="{{ $user->id }}">
                                 <div class="form-group">
@@ -78,7 +78,8 @@
                         </tr>
                         @endforeach
                     </tbody>
-            </table>                
+            </table>
+            {{ $images->links() }}                  
         </div>
     </div>
 </div>
