@@ -25,15 +25,15 @@ class UserController extends Controller
     {
     	$input = $request->except(['_token','save_user']);
     	$user = \App\User::find($input['id']);
-    	   	if(Auth::id() === $user->id){
-				foreach ($input as $key => $value) {
-            		$user->$key = $value;
-        		}
-    				$user->save();
-					return redirect()->action('HomeController@index');
-	    		}else{
-	    			return redirect()->action('HomeController@index');
-	    		}	    	
+	   	if(Auth::id() === $user->id){
+			foreach ($input as $key => $value) {
+        		$user->$key = $value;
+    		}
+				$user->save();
+				return redirect()->action('HomeController@index');
+    		}else{
+    			return redirect()->action('HomeController@index');
+    		}	    	
     }
 
 }

@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Validator;
-
+use App\User;
+use App\Comment;
+use App\Image;
 
 class ImageController extends Controller
 {
@@ -14,7 +16,7 @@ class ImageController extends Controller
     public function index()
     {
 
-    	$images = \App\Image::with('user')->get();
+    	$images = \App\Image::with(['user','comments'])->get();
     	$id =  Auth::id();
     	return view('gallery', ['images' => $images, 'id' => $id]);
     
@@ -39,8 +41,8 @@ class ImageController extends Controller
 				}
 					$request_image = [
 		            'user_id'=> $request['id'],
-		            'image_name'=> $request['image_name'],
-		            'image_description'=> $request['image_description'],
+		            'name'=> $request['image_name'],
+		            'description'=> $request['image_description'],
 		            'file_name'=> $file_name,
                     'path' => $path,
 		        	];

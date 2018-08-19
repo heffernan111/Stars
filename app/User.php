@@ -30,6 +30,12 @@ class User extends Authenticatable
     ];
 
   
+    //images
+
+    public function images()
+    {
+      return $this->hasMany('App\Image');
+    }
 
     // roles
 

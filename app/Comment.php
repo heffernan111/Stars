@@ -4,10 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Image extends Model
+class Comment extends Model
 {
     protected $fillable = [
-        'user_id', 'name', 'description', 'file_name','path',
+        'user_id', 'content','image_id',
     ]; 
 
     public function user()
@@ -15,9 +15,10 @@ class Image extends Model
     	return $this->belongsTo('App\User');
     }
 
-    public function comments()
+     public function image()
     {
-      return $this->hasMany('App\Comment');
+    	return $this->belongsTo('App\Image');
     }
+
 
 }
