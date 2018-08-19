@@ -92,7 +92,14 @@ class AdminController extends Controller
             'banned'=> null,
         ];
         $user_id->update($user);
-        return redirect()->action('AdminController@users')->with('message',"$user_id->name"." ".'Access Restored');
-       
+        return redirect()->action('AdminController@users')->with('message',"$user_id->name"." ".'Access Restored');      
+    }
+
+
+    public function gallery()
+    {
+        $images = \App\Image::with(['user','comments'])->get();
+        $id =  Auth::id();
+        return view('admin_gallery', ['images' => $images, 'id' => $id]);
     }
 }

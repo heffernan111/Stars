@@ -36,4 +36,14 @@ class UserController extends Controller
     		}	    	
     }
 
+    public function delete($id)
+    {
+    
+        $image = \App\Image::with('comments')->find($id);
+        $image->comments()->delete();
+        $image->delete();
+        return redirect()->action('HomeController@index');
+       
+    }
+
 }
