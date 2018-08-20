@@ -29,7 +29,14 @@ class User extends Authenticatable
         'password', 'remember_token', 'banned',
     ];
 
-  
+      //comments
+
+    public function comments()
+    {
+      return $this->hasMany('App\Comment');
+    }
+
+
     //images
 
     public function images()

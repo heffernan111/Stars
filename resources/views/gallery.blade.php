@@ -48,10 +48,27 @@
                             @foreach($images as $image)
                                 <div class="card">
                                     <div class="card-header">{{ $image->name }}  by  {{ $image->user['name']." ". $image->created_at }}</div>
-                                    <div class="card-body">{{ $image->description }}</div>
+                                    <div class="card-body">{{ $image->description }} </div>
                                     <img src="<?php echo asset("storage/$image->file_name")?>" height="200", width="200"></img>
                                     <div class="card-footer">
-                                        {{ $image[0][0]['id'] }}
+                                        <table class="table table-striped table-bordered table-hover">
+                                            <thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th>Comment</th>
+                                                    <th>User</th>
+                                                    <th>Time</th>
+                                                </tr>
+                                            </thead>    
+                                            @foreach($image->comments as $comment)
+                                            <tr>
+                                                <td>{{ $comment->content }}</td>
+                                                <td>{{ $comment->user['name'] }}</td>
+                                                <td>{{ $comment->created_at  }}</td>
+                                            </tr>
+                                            @endforeach
+                                            </tbody>
+                                        </table>   
                                     </div>
                                 </div>
                                 <br>                            
