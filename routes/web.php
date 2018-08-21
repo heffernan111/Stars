@@ -32,12 +32,14 @@ Route::get('gallery', 'ImageController@index');
 Route::post('gallery/upload', 'ImageController@upload');
 Route::post('gallery/comment/{id}', 'ImageController@comment');
 
-//User 
+//Profile 
 Route::get('/profile/{id}', 'UserController@index')->middleware('auth','user');
 Route::post('/profile/update', 'UserController@update')->middleware('auth');
 Route::get('/profile/gallery', 'UserController@gallery')->middleware('auth');
 Route::get('/profile/image/delete/{id}', 'UserController@delete')->middleware('auth','user');
-Route::post('/profile/upload', 'UserController@upload')->middleware('auth','user');;
+Route::post('/profile/upload', 'UserController@upload')->middleware('auth','user');
+Route::get('/profile/guides/delete/{id}', 'UserController@remove')->middleware('auth','user');
+
 
 //Guides
 Route::get('guides', 'GuideController@index');

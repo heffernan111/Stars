@@ -24,7 +24,7 @@
 				</div>
 			</form>
             <button id="upload" class="btn btn-success">Upload</button>
-            @endif
+            @endif 
             <!-- The Modal -->
                 <div id="uploadModal" class="modal">
                     <!-- Modal content -->
@@ -53,34 +53,72 @@
                 </div>
                 <!--modal end  -->
 		</div>
-		<div class="col-md-12">
-        <div class="card-body">
-            <table class="table table-striped table-bordered table-hover">
-                <thead>
-                    <tbody>
-                        <tr>
-                            <th>Thumbnail</th>
-                            <th>Name</th>
-                            <th>Description</th>
-                            @if(Auth::id() === $user->id)
-                            <th>Delete</th>
-                            @endif                           
-                        </tr>
-               			</thead>    
-                        @foreach($images as $image)
-                        <tr>
-                        	<td><img src="<?php echo asset("storage/$image->file_name")?>" height="100", width="100"></img></td>
-                            <td>{{ $image->name }}</td>
-                            <td>{{ $image->description }}</td>
-                            @if(Auth::id() === $user->id)
-                            <td><a href="/profile/image/delete/{{ $image->id }}" class="btn btn-danger" role="button">Delete</a></td>
-                            @endif
-                        </tr>
-                        @endforeach
-                    </tbody>
-            </table>
-            {{ $images->links() }}                  
+		<div class="col-md-10">
+                <div class="card-body">
+                    <table class="table table-striped table-bordered table-hover">
+                        <h1>My Images</h1>
+                        <thead>
+                            <tbody>
+                                <tr>
+                                    <th>Thumbnail</th>
+                                    <th>Name</th>
+                                    <th>Description</th>
+                                    @if(Auth::id() === $user->id)
+                                    <th>Delete</th>
+                                    @endif                           
+                                </tr>
+                       			</thead>    
+                                @foreach($images as $image)
+                                <tr>
+                                	<td><img src="<?php echo asset("storage/$image->file_name")?>" height="100", width="100"></img></td>
+                                    <td>{{ $image->name }}</td>
+                                    <td>{{ $image->description }}</td>
+                                    @if(Auth::id() === $user->id)
+                                    <td><a href="/profile/image/delete/{{ $image->id }}" class="btn btn-danger" role="button">Delete</a></td>
+                                    @endif
+                                </tr>
+                                @endforeach
+                            </tbody>
+                    </table>
+                    {{ $images->links() }}                  
+                </div>
         </div>
+        
+
+        <div class="col-md-10">
+                <div class="card-body">
+                    <table class="table table-striped table-bordered table-hover">
+                        <h1>My Documents</h1>
+                        <thead>
+                            <tbody>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Description</th>
+                                    <th>Tags</th>
+                                    @if(Auth::id() === $user->id)
+                                    <th>Delete</th>
+                                    @endif                           
+                                </tr>
+                                </thead>    
+                                @foreach($guides as $guide)
+                                <tr>
+                                    <td>{{ $guide->name }}</td>
+                                    <td>{{ $guide->desc }}</td>
+                                    <td>{{ $guide->tags }}</td>
+                                    @if(Auth::id() === $user->id)
+                                    <td><a href="/profile/guides/delete/{{ $guide->id }}" class="btn btn-danger" role="button">Delete</a></td>
+                                    @endif
+                                </tr>
+                                @endforeach
+                            </tbody>
+                    </table>
+                    {{ $images->links() }}                  
+                </div>
+        </div>
+
+
+
+
     </div>
 </div>
 @endsection

@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Validator;
 use Illuminate\Support\Facades\DB;
 use App\User;
-
+ 
 
 class UserController extends Controller
 {
@@ -17,7 +17,8 @@ class UserController extends Controller
     {
     	$user= \App\User::find($id);    	  	
     	$images = \App\Image::where('user_id',$id)->paginate(10);
-    	return view('user_profile', ['user' => $user, 'images' => $images]);
+        $guides = \App\Guide::where('user_id',$id)->paginate(10);
+    	return view('user_profile', ['user' => $user, 'images' => $images, 'guides' => $guides]);
     	
     }
 
@@ -73,5 +74,14 @@ class UserController extends Controller
         \App\Image::create($request_image);         
         return redirect()->action('UserController@index');
 
+    }
+
+    public function remove($id)
+    {
+    
+        $guide = \App\Guide::find($id);
+        $guide->delete();
+        return redirect()->action('HomeController@index');
+       
     }
 }
