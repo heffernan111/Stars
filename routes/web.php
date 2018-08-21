@@ -30,6 +30,7 @@ Route::get('admin/gallery', 'AdminController@gallery')->middleware('auth');
 // Gallery 
 Route::get('gallery', 'ImageController@index');
 Route::post('gallery/upload', 'ImageController@upload');
+Route::post('gallery/comment/{id}', 'ImageController@comment');
 
 //User 
 Route::get('/profile/{id}', 'UserController@index')->middleware('auth','user');

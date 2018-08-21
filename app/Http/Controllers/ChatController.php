@@ -25,16 +25,13 @@ class ChatController extends Controller
      */
     public function index()
     {
-
         $chats = DB::table('user_chat')->paginate(15);
-
         return view('chat',['chats'=>$chats]);
     }
 
     
        public function new(Request $request)
     {
-
         $inputs = $request->except('_token');
         $validateData = $request->validate([
             'text' => 'required|max:255',            

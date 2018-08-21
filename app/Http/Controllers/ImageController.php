@@ -8,20 +8,16 @@ use Validator;
 use App\User;
 use App\Comment;
 use App\Image;
+use Illuminate\Support\Facades\DB;
+
 
 class ImageController extends Controller
-{
-
-   
+{ 
     public function index()
     {
-
     	$images = \App\Image::with(['comments.user','user'])->get();
-
     	$id =  Auth::id();
-        //dd($images);
     	return view('gallery', ['images' => $images, 'id' => $id]);
-    
     }
 
     public function upload(Request $request)
@@ -32,14 +28,10 @@ class ImageController extends Controller
         'image_description' => 'required|max:255',
         'filename.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
    		]);
-
 			if ($request->hasFile('file')) {
 				$file_name = $request->file->getClientOriginalName();
-                //$request->file('photo')->move(public_path("/uploads"), $newfilename);
-                // Storage::disk('uploads')->put($file_name,'file');
 				$path = $request->file->storeAs('public', $file_name);
 				$file_description = $request->description;
-
 				}
 					$request_image = [
 		            'user_id'=> $request['id'],
@@ -48,9 +40,20 @@ class ImageController extends Controller
 		            'file_name'=> $file_name,
                     'path' => $path,
 		        	];
-        	
-		\App\Image::create($request_image);			
-        return redirect()->action('ImageController@index')->with('message', 'Image Uploaded. Awaiting Approval.');
+                		\App\Image::create($request_image);			
+                        return redirect()->action('ImageController@index')->with('message', 'Image Uploaded. Awaiting Approval.');
 
+    }
+
+    public function comment(Request $request)
+    {
+        $user = Auth::user()->id;
+        $comment = [
+            'user_id' => $user,
+            'content' => $request['text'],
+            'image_id' => $request['image_id'],
+        ];
+        DB::table('comments')->insert($comment);
+        return redirect()->action('ImageController@index')->with('message', 'Comment Sent');       
     }
 }

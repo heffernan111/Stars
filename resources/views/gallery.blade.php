@@ -46,7 +46,7 @@
                     <div class="card-header">Gallery</div>
                         <div class="card-body">
                             @foreach($images as $image)
-                                <div class="card">
+                                <div class="card" value="{{ $image->id }}">
                                     <div class="card-header">{{ $image->name }}  by  {{ $image->user['name']." ". $image->created_at }}</div>
                                     <div class="card-body">{{ $image->description }} </div>
                                     <img src="<?php echo asset("storage/$image->file_name")?>" height="200", width="200"></img>
@@ -65,10 +65,20 @@
                                                 <td>{{ $comment->content }}</td>
                                                 <td>{{ $comment->user['name'] }}</td>
                                                 <td>{{ $comment->created_at  }}</td>
-                                            </tr>
+                                            </tr>                                         
                                             @endforeach
                                             </tbody>
-                                        </table>   
+                                        </table> 
+                                            <form action="/gallery/comment/{{ $image->id }}" method="post" enctype="multipart/form-data">
+                                            @csrf
+                                                 <div>
+                                                <input name="image_id" type="hidden" value="{{ $image->id }}">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="text">Comment</label>
+                                                    <input type="text" class="form-control" name="text">
+                                                </div>
+                                            </form>                                             
                                     </div>
                                 </div>
                                 <br>                            
