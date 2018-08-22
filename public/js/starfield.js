@@ -1,100 +1,182 @@
-/*
-	Starfield lets you take a div and turn it into a starfield.
-*/
+"use strict";
 
-//	Define the starfield class.
-function Starfield() {
-	this.fps = 30;
-	this.canvas = null;
-	this.width = 0;
-	this.height = 0;
-	this.minVelocity = 15;
-	this.maxVelocity = 30;
-	this.stars = 100;
-	this.intervalId = 0;
+var canvas = document.getElementById("canvas"),
+  ctx = canvas.getContext("2d"),
+  w = (canvas.width = window.innerWidth),
+  h = (canvas.height = window.innerHeight),
+  colorrange = [0, 50, 220],
+  stars = [],
+  count = 0,
+  starMultiplier = 0.3,
+  half = 50,
+  maxStars,
+  delta,
+  $window = $(window),
+  prev,
+  move,
+  scrollTop;
+
+// Thanks @jackrugile for the performance tip! https://codepen.io/jackrugile/pen/BjBGoM
+// Cache gradient
+var canvas2 = document.createElement("canvas"),
+  ctx2 = canvas2.getContext("2d");
+canvas2.width = 100;
+canvas2.height = 100;
+
+var canvas3 = document.createElement("canvas"),
+  ctx3 = canvas3.getContext("2d");
+canvas3.width = 100;
+canvas3.height = 100;
+
+var canvas4 = document.createElement("canvas"),
+  ctx4 = canvas4.getContext("2d");
+canvas4.width = 100;
+canvas4.height = 100;
+
+//pure white
+var gradient1 = ctx2.createRadialGradient(half, half, 0, half, half, half);
+gradient1.addColorStop(0.025, "hsl(" + colorrange[0] + ", 0%, 100%)");
+gradient1.addColorStop(0.1, "hsl(" + colorrange[0] + ", 0%, 33%)");
+gradient1.addColorStop(0.25, "hsl(" + colorrange[0] + ", 0%, 6%)");
+gradient1.addColorStop(1, "transparent");
+
+//yellow
+var gradient2 = ctx3.createRadialGradient(half, half, 0, half, half, half);
+gradient2.addColorStop(0.025, "hsl(" + colorrange[1] + ", 20%, 100%)");
+gradient2.addColorStop(0.1, "hsl(" + colorrange[1] + ", 20%, 33%)");
+gradient2.addColorStop(0.25, "hsl(" + colorrange[1] + ", 20%, 6%)");
+gradient2.addColorStop(1, "transparent");
+
+//pure blue
+var gradient3 = ctx4.createRadialGradient(half, half, 0, half, half, half);
+gradient3.addColorStop(0.025, "hsl(" + colorrange[2] + ", 20%, 100%)");
+gradient3.addColorStop(0.1, "hsl(" + colorrange[2] + ", 20%, 33%)");
+gradient3.addColorStop(0.25, "hsl(" + colorrange[2] + ", 20%, 6%)");
+gradient3.addColorStop(1, "transparent");
+
+ctx2.fillStyle = gradient1;
+ctx2.beginPath();
+ctx2.arc(half, half, half, 0, Math.PI * 2);
+ctx2.fill();
+
+ctx3.fillStyle = gradient2;
+ctx3.beginPath();
+ctx3.arc(half, half, half, 0, Math.PI * 2);
+ctx3.fill();
+
+ctx4.fillStyle = gradient3;
+ctx4.beginPath();
+ctx4.arc(half, half, half, 0, Math.PI * 2);
+ctx4.fill();
+
+var gradients = [canvas2, canvas3, canvas4];
+// End cache
+
+function random(min, max) {
+  if (arguments.length < 2) {
+    max = min;
+    min = 0;
+  }
+
+  if (min > max) {
+    var hold = max;
+    max = min;
+    min = hold;
+  }
+
+  return Math.random() * (max - min) + min;
 }
 
-//	The main function - initialises the starfield.
-Starfield.prototype.initialise = function(div) {
-	var self = this;
+var Star = function() {
+  var val = Math.floor(random(2));
+  this.gradient = gradients[val];
+  this.x = random(w);
+  (this.y = random(h)), (this.distance = random(0, 0.5));
+  if (this.distance < 0.1) this.distance = 0.04;
+  this.moving = Math.random() < 0.75;
+  if (this.moving) {
+    this.directionX = random(-0.035, 0.035);
+    this.directionY = random(-0.035, 0.035);
+  } else {
+    this.directionX = 0;
+    this.directionY = 0;
+  }
 
-	//	Store the div.
-	this.containerDiv = div;
-	self.width = window.innerWidth;
-	self.height = window.innerHeight;
+  if (Math.random() > 0.75) {
+    this.radius = random(40, 400) / 10;
+  } else {
+    this.radius = random(40, 150) / 10;
+  }
+  this.timePassed = random(0, maxStars);
+  this.speed = random(100) / 50000;
+  this.alpha = random(2, 10) / 10;
 
-	window.addEventListener('resize', function resize(event) {
-		self.width = window.innerWidth;
-		self.height = window.innerHeight;
-		self.canvas.width = self.width;
-		self.canvas.height = self.height;
-		self.draw();
-	});
-
-	//	Create the canvas.
-	var canvas = document.createElement('canvas');
-	div.appendChild(canvas);
-	this.canvas = canvas;
-	this.canvas.width = this.width;
-	this.canvas.height = this.height;
+  count++;
+  stars[count] = this;
 };
 
-Starfield.prototype.start = function() {
+Star.prototype.draw = function() {
+  var twinkle = random(200);
 
-	//	Create the stars.
-	var stars = [];
-	for(var i=0; i<this.stars; i++) {
-		stars[i] = new Star(Math.random()*this.width, Math.random()*this.height, Math.random()*3+1,
-		 (Math.random()*(this.maxVelocity - this.minVelocity))+this.minVelocity);
-	}
-	this.stars = stars;
+  var dist = 0;
+  if (delta != 0) {
+    dist = this.distance * delta;
+  }
 
-	var self = this;
-	//	Start the timer.
-	this.intervalId = setInterval(function() {
-		self.update();
-		self.draw();	
-	}, 1000 / this.fps);
+  this.x += this.directionX;
+  this.y += this.directionY + dist;
+
+  if (this.x > w || this.x < 0 || this.y > h || this.y < 0) {
+    this.x = random(w);
+    this.y = random(h);
+  }
+
+  if (twinkle === 1 && this.alpha > 0) {
+    this.alpha -= 0.025;
+  } else if (twinkle === 2 && this.alpha < 1) {
+    this.alpha += 0.025;
+  }
+
+  ctx.globalAlpha = this.alpha;
+  ctx.drawImage(
+    this.gradient,
+    this.x - this.radius / 2,
+    this.y - this.radius / 2,
+    this.radius,
+    this.radius
+  );
 };
 
-Starfield.prototype.stop = function() {
-	clearInterval(this.intervalId);
-};
-
-Starfield.prototype.update = function() {
-	var dt = 1 / this.fps;
-
-	for(var i=0; i<this.stars.length; i++) {
-		var star = this.stars[i];
-		star.y += dt * star.velocity;
-		//	If the star has moved from the bottom of the screen, spawn it at the top.
-		if(star.y > this.height) {
-			this.stars[i] = new Star(Math.random()*this.width, 0, Math.random()*3+1, 
-		 	(Math.random()*(this.maxVelocity - this.minVelocity))+this.minVelocity);
-		}
-	}
-};
-
-Starfield.prototype.draw = function() {
-
-	//	Get the drawing context.
-	var ctx = this.canvas.getContext("2d");
-
-	//	Draw the background.
- 	ctx.fillStyle = '#000000';
-	ctx.fillRect(0, 0, this.width, this.height);
-
-	//	Draw stars.
-	ctx.fillStyle = '#ffffff';
-	for(var i=0; i<this.stars.length;i++) {
-		var star = this.stars[i];
-		ctx.fillRect(star.x, star.y, star.size, star.size);
-	}
-};
-
-function Star(x, y, size, velocity) {
-	this.x = x;
-	this.y = y; 
-	this.size = size;
-	this.velocity = velocity;
+function init() {
+  count = 0;
+  w = canvas.width = window.innerWidth;
+  h = canvas.height = window.innerHeight;
+  maxStars = w * starMultiplier;
+  stars = [];
+  for (var i = 0; i < maxStars; i++) {
+    new Star();
+  }
 }
+
+window.addEventListener("resize", init);
+
+function animation() {
+  scrollTop = $window.scrollTop();
+  delta = (prev - scrollTop) / 100;
+  prev = scrollTop;
+
+  ctx.globalCompositeOperation = "source-over";
+  ctx.globalAlpha = 1;
+  ctx.fillStyle = "hsla(0, 0%, 0%, 1)";
+  ctx.fillRect(0, 0, w, h);
+
+  ctx.globalCompositeOperation = "lighter";
+  for (var i = 1, l = stars.length; i < l; i++) {
+    stars[i].draw();
+  }
+
+  window.requestAnimationFrame(animation);
+}
+
+animation();
+init();
