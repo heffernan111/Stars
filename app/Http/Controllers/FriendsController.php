@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use App\Item;
 
-class HomeController extends Controller
+class FriendsController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -14,18 +15,18 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        //$this->middleware('auth');
+        $this->middleware('auth');
     }
 
     /**
-     * Show the application dashboard.
+     * Show current Friends Table.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $id =  Auth::id();
-        $roles = \App\User::with('roles')->find($id);
-        return view('welcome', ['roles'=>$roles]);
+        $users = DB::table('users')->paginate(15);
+        
+        return view('myUsers',['users' => $users]);
     }
 }
